@@ -1,0 +1,23 @@
+server:
+  port: 3344
+
+spring:
+  application:
+    name: cloud-config-center
+  cloud:
+    config:
+      server:
+        git:
+          # GitHub上仓库地址
+          uri: https://github.com/amusir/springcloud-config.git
+          search-paths:
+            # 仓库目录
+          - config
+      # 分支
+      label: master
+# 注册到Eureka
+eureka:
+  client:
+    service-url:
+      defaultZone:  http://localhost:7001/eureka
+
